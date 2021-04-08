@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Loader from "react-loader-spinner"
 
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
@@ -47,7 +48,15 @@ export default function UserRepositories() {
 
   return (
     <>
-      {isLoading && <span>Carregando...</span>}
+      {isLoading && (
+        <Loader
+          type="TailSpin"
+          color="#5194f0"
+          height={100}
+          width={100}
+          timeout={3000}
+        />
+      )}
       {(!isLoading && state.error) && <Error />}
       {(!isLoading && !state.error) && (
         <>
