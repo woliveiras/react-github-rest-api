@@ -1,4 +1,8 @@
+import { GoStar, GoRepo } from "react-icons/go"
+
 import BaseCard from '../BaseCard'
+import Heading from '../Typography/Heading'
+import Separator from '../Separator'
 
 const RepositoryCard = ({
     name,
@@ -10,9 +14,10 @@ const RepositoryCard = ({
         <BaseCard>
         <a href={repoUrl} target='_blank' rel="noreferrer">
             <article>
-                <h2>{name}</h2>
-                <p>{starts}</p>
-                <p>Licença: {license}</p>
+                <Heading type='intertitle'><GoRepo /> {name}</Heading>
+                <p><GoStar /> {starts}</p>
+                <Separator />
+                {license  && <p>Licença: {license}</p>}
             </article>
         </a>
         </BaseCard>
