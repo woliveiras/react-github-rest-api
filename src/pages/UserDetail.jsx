@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
 import UserCard from '../components/UserCard'
+import LinkCard from '../components/LinkCard'
 import Heading from '../components/Typography/Heading'
 
 export default function UserDetail() {
@@ -55,7 +56,9 @@ export default function UserDetail() {
             following={state.user?.following}
             location={state.user?.location}
           />
-          <Link to={`/${state.user?.login}/repositories`}>Repositórios</Link>
+          <LinkCard>
+            <Link to={`/${state.user?.login}/repositories`}>Conferir os repositórios</Link>
+          </LinkCard>
         </>
       )}
     </>
