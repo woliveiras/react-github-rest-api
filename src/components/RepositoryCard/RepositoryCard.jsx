@@ -8,6 +8,7 @@ const RepositoryCard = ({
     name,
     repoUrl,
     starts,
+    description,
     license
 }) => {
     return (
@@ -16,8 +17,13 @@ const RepositoryCard = ({
             <article>
                 <Heading type='intertitle'><GoRepo /> {name}</Heading>
                 <p><GoStar /> {starts}</p>
-                <Separator />
-                {license  && <p>Licença: {license}</p>}
+                {description  && (<p>{description}</p>)}
+                {license  && (
+                    <>
+                        <Separator />
+                        <p>Licença: {license}</p>
+                    </>
+                )}
             </article>
         </a>
         </BaseCard>

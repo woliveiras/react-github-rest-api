@@ -13,6 +13,13 @@ export default function UserRepositories() {
   const [isLoading, setIsLoading] = useState(false)
   const { state, dispatch } = useCustomUseContext()
 
+  const handleRepositoriesOrder = ordenated => {
+    dispatch({
+      type: 'SET_REPOSITORIES_DATA',
+      repositories: ordenated
+    })
+  }
+
   useEffect(() => {
     const fetchUser = async user => {
       setIsLoading(true)
@@ -44,7 +51,7 @@ export default function UserRepositories() {
       {(!isLoading && !state.error) && (
         <>
           <Heading type='title'>Repos @{state.repositories?.[0].owner.login}</Heading>
-          <RepositoryOrdenation />
+          <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder}/>
           <ul className=''>
             {state.repositories?.map(repo => 
               (<li key={repo.name}>
@@ -53,11 +60,12 @@ export default function UserRepositories() {
                   repoUrl={repo.html_url}
                   starts={repo.stargazers_count}
                   license={repo.license?.name}
+                  description={repo.description}
                 />
               </li>))}
           </ul>
         </>
       )}
     </>
-  );
+  )
 }

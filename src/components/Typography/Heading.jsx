@@ -1,6 +1,6 @@
 import './Heading.sass'
 
-const Heading = ({text, type, children}) => {
+const Heading = ({text, type = 'title', children}) => {
     const headingTypes = {
         title: 'h1',
         subtitle: 'h2',

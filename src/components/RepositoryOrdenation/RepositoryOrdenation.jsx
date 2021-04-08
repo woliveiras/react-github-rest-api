@@ -1,12 +1,8 @@
 import { orderBy } from 'lodash'
 
-import { useCustomUseContext } from '../../context/reactGitHubApiContext'
-
 import './RepositoryOrdenation.sass'
 
-const RepositoryOrdenation = ({ handleOption }) => {
-    const { state, dispatch } = useCustomUseContext()
-
+const RepositoryOrdenation = ({ repositories, dispatcher }) => {
     const handleOrdenation = e => {
         const userChoice = e.target.value
         const ordenationTypes = {
@@ -29,14 +25,12 @@ const RepositoryOrdenation = ({ handleOption }) => {
         }
         const ordenated = 
             orderBy(
-                state.repositories,
+                repositories,
                 [ordenationTypes[userChoice].key],
                 [ordenationTypes[userChoice].direction]
             )
-        dispatch({
-            type: 'SET_REPOSITORIES_DATA',
-            repositories: ordenated
-        })
+
+        dispatcher(ordenated)
     }
 
     return (
