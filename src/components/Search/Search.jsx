@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { GoSearch } from "react-icons/go";
+
+import './Search.sass'
 
 const Search = () => {
     const [user, setUser] = useState('')
@@ -11,12 +14,12 @@ const Search = () => {
     }
 
     return (
-        <>
-            <form onSubmit={e => handleSubmit(e)}>
-                <input type="text" onChange={e => setUser(e.target.value)} placeholder='Pesquisar usuário do GitHub'/>
-                <button>Search</button>
+        <div className='search'>
+            <form className='search__form' onSubmit={e => handleSubmit(e)}>
+                <input className='search__input' type="text" onChange={e => setUser(e.target.value)} placeholder='Pesquisar usuário do GitHub'/>
+                <button className='search__go'><GoSearch /></button>
             </form>
-        </>
+        </div>
     )
 }
 

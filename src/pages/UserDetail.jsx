@@ -41,6 +41,7 @@ export default function UserDetail() {
       {(!isLoading && state.error) && <span>Erro</span>}
       {(!isLoading && !state.error) && (
         <>
+          <h1>Detalhes de usuário</h1>
           <UserCard 
             avatarUrl={state.user?.avatar_url}
             login={state.user?.login}
