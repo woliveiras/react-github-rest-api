@@ -9,7 +9,6 @@ const UserCard = ({
     following,
     location
 }) => {
-    console.log(avatarUrl)
     return (
         <BaseCard>  
             <img src={avatarUrl} alt={`Foto de perfil de ${name}`}/>

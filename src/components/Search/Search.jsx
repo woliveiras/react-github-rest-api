@@ -13,7 +13,7 @@ const Search = () => {
     return (
         <>
             <form onSubmit={e => handleSubmit(e)}>
-                <input type="text" onChange={e => setUser(e.target.value)} placeholder='Usuário do GitHub'/>
+                <input type="text" onChange={e => setUser(e.target.value)} placeholder='Pesquisar usuário do GitHub'/>
                 <button>Search</button>
             </form>
         </>

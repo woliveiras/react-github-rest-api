@@ -7,6 +7,13 @@ export default function contextReducer(state, action) {
                 user: action.user
             }
         }
+        case 'SET_REPOSITORIES_DATA': {
+            return {
+                ...state,
+                error: '',
+                repositories: action.repositories
+            }
+        }
         case 'SET_FETCH_ERROR': {
             return {
                 error: action.error

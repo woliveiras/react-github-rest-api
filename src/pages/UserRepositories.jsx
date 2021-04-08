@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
-import UserCard from '../components/UserCard'
+import RepositoryCard from '../components/RepositoryCard'
 
-export default function UserDetail() {
+export default function UserRepositories() {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
   const { state, dispatch } = useCustomUseContext()
@@ -14,12 +14,12 @@ export default function UserDetail() {
   useEffect(() => {
     const fetchUser = async user => {
       setIsLoading(true)
-      await axios.get(`https://api.github.com/users/${user}`)
+      await axios.get(`https://api.github.com/users/${user}/repos`)
         .then(response => {
           setIsLoading(false)
           dispatch({
-              type: 'SET_USER_DATA',
-              user: response.data
+              type: 'SET_REPOSITORIES_DATA',
+              repositories: response.data
           })
         })
         .catch(error => {
@@ -41,16 +41,18 @@ export default function UserDetail() {
       {(!isLoading && state.error) && <span>Erro</span>}
       {(!isLoading && !state.error) && (
         <>
-          <UserCard 
-            avatarUrl={state.user?.avatar_url}
-            login={state.user?.login}
-            name={state.user?.name}
-            bio={state.user?.bio}
-            followers={state.user?.followers}
-            following={state.user?.following}
-            location={state.user?.location}
-          />
-          <Link to={`/${state.user?.login}/repositories`}>Repositórios</Link>
+          <h1>Repositórios de @{state.repositories?.[0].owner.login}</h1>
+          <ul className=''>
+            {state.repositories?.map(repo => 
+              (<li key={repo.name}>
+                <RepositoryCard 
+                  name={repo.name}
+                  repoUrl={repo.html_url}
+                  starts={repo.stargazers_count}
+                  license={repo.license?.name}
+                />
+              </li>))}
+          </ul>
         </>
       )}
     </>
