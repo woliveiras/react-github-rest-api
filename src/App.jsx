@@ -1,5 +1,5 @@
 import { Route, Switch, Link } from "react-router-dom"
-import { GoOctoface } from "react-icons/go"
+import { GoMarkGithub } from "react-icons/go"
 
 import Home from './pages/Home'
 import UserDetail from './pages/UserDetail'
@@ -16,7 +16,7 @@ export default function App() {
       <div className='app'>
         <header className='app__header'>
           <Link to='/'>
-            <GoOctoface className='app__header__icon' />
+            <GoMarkGithub className='app__header__icon' />
           </Link>
           <Search />
         </header>

@@ -1,4 +1,7 @@
 import BaseCard from '../BaseCard'
+import Separator from '../Separator'
+
+import './UserCard.sass'
 
 const UserCard = ({
     avatarUrl,
@@ -10,14 +13,15 @@ const UserCard = ({
     location
 }) => {
     return (
-        <BaseCard>  
-            <img src={avatarUrl} alt={`Foto de perfil de ${name}`}/>
-            <p>{name}</p>
+        <BaseCard className='userCard'>  
+            <img className='userCard__avatar' src={avatarUrl} alt={`Foto de perfil de ${name}`}/>
+            <strong>{name}</strong>
             <p>@{login}</p>
-            <p>{location}</p>
+            {location && (<p>{location}</p>)}
+            <Separator />
             <p>{bio}</p>
-            <p>{followers} followers</p>
-            <p>{following} following</p>
+            <p><strong>{followers}</strong> followers</p>
+            <p><strong>{following}</strong> following</p>
         </BaseCard>
     )
 }

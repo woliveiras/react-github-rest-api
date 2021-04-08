@@ -5,6 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
 import UserCard from '../components/UserCard'
+import Heading from '../components/Typography/Heading'
 
 export default function UserDetail() {
   const { user } = useParams()
@@ -41,7 +42,10 @@ export default function UserDetail() {
       {(!isLoading && state.error) && <span>Erro</span>}
       {(!isLoading && !state.error) && (
         <>
-          <h1>Detalhes de usuário</h1>
+          <Heading
+            type='subtitle'
+            text='Detalhes de usuário'
+          />
           <UserCard 
             avatarUrl={state.user?.avatar_url}
             login={state.user?.login}
