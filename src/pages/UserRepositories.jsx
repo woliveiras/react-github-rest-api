@@ -6,6 +6,7 @@ import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
 import RepositoryCard from '../components/RepositoryCard'
 import Heading from '../components/Typography/Heading'
+import RepositoryOrdenation from '../components/RepositoryOrdenation'
 
 export default function UserRepositories() {
   const { user } = useParams()
@@ -43,6 +44,7 @@ export default function UserRepositories() {
       {(!isLoading && !state.error) && (
         <>
           <Heading type='title'>Repos @{state.repositories?.[0].owner.login}</Heading>
+          <RepositoryOrdenation />
           <ul className=''>
             {state.repositories?.map(repo => 
               (<li key={repo.name}>
