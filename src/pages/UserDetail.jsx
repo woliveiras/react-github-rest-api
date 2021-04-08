@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
+import UserCard from '../components/UserCard'
+
 export default function UserDetail() {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
@@ -37,7 +39,15 @@ export default function UserDetail() {
     <>
       {isLoading && <span>Carregando...</span>}
       {state.error && <span>Erro</span>}
-      <img src={state.user?.avatar_url} alt=""/>
+      <UserCard 
+        avatarUrl={state.user?.avatar_url}
+        login={state.user?.login}
+        name={state.user?.name}
+        bio={state.user?.bio}
+        followers={state.user?.followers}
+        following={state.user?.following}
+        location={state.user?.location}
+      />
     </>
   );
 }
