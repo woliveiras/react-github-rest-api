@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# React GitHub Rest API [![Netlify Status](https://api.netlify.com/api/v1/badges/b9850853-29fb-47ec-932c-13a524b96543/deploy-status)](https://app.netlify.com/sites/relaxed-boyd-3ed8fc/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Aplicação em React utilizando Sass, BEM CSS, react-testing-library, Axios, GitHub Rest API e Netlify.
 
-## Available Scripts
+[Ambiente de Produção](https://relaxed-boyd-3ed8fc.netlify.app/)
 
-In the project directory, you can run:
+O ambiente de QA é gerado quando aberto um novo pull request.
 
-### `yarn start`
+## Rodando o projeto localmente
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Será necessário a instalação das seguintes dependências:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- nodejs
+- yarn
 
-### `yarn test`
+De preferência, instale a última versão do Node.js com o [NVM](https://github.com/nvm-sh/nvm).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Caso você não tenha nada instalado em sua máquina, utilize este tutorial para configurar o ambiente fullstack JavaScript: [Configurando o ambiente de desenvolvimento fullstack JavaScript](https://woliveiras.com.br/posts/configurando-o-ambiente-de-desenvolvimento-fullstack-javascript/)
 
-### `yarn build`
+Saiba mais sobre o NVM neste link: [Utilizando versões antigas do Nodejs](https://woliveiras.com.br/posts/utilizando-versoes-antigas-do-nodejs/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Rodando o servidor de desenvolvimento 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para executar o servidor de desenvolvimento, execute o seguinte comando no seu terminal:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+yarn start
+```
 
-### `yarn eject`
+Será aberto automaticamente o link [http://localhost:3000](http://localhost:3000) em seu navegador padrão.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Rodando os testes 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para executar os testes, execute o seguinte comando no seu terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+yarn test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Obtendo o build de produção
 
-## Learn More
+Caso precise testar o build de produção em sua máquina, basta executar o seguinte comando no seu terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```sh
+yarn build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A pasta build irá aparecer no repositório com todos os arquivos necessários para deploy.
 
-### Code Splitting
+### Deploy em produção
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+O deploy para produção acontece automaticamente através do merge branch main.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para acompanhar o deploy, você pode utilizar este link: [netlify.com/relaxed-boyd](https://app.netlify.com/sites/relaxed-boyd-3ed8fc/deploys)
