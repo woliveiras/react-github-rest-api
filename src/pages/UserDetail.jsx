@@ -6,6 +6,7 @@ import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
 import UserCard from '../components/UserCard'
 import LinkCard from '../components/LinkCard'
+import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
 
 export default function UserDetail() {
@@ -40,7 +41,7 @@ export default function UserDetail() {
   return (
     <>
       {isLoading && <span>Carregando...</span>}
-      {(!isLoading && state.error) && <span>Erro</span>}
+      {(!isLoading && state.error) && <Error />}
       {(!isLoading && !state.error) && (
         <>
           <Heading

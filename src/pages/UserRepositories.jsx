@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
 import RepositoryCard from '../components/RepositoryCard'
+import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
 import RepositoryOrdenation from '../components/RepositoryOrdenation'
 
@@ -47,7 +48,7 @@ export default function UserRepositories() {
   return (
     <>
       {isLoading && <span>Carregando...</span>}
-      {(!isLoading && state.error) && <span>Erro</span>}
+      {(!isLoading && state.error) && <Error />}
       {(!isLoading && !state.error) && (
         <>
           <Heading type='title'>Repos @{state.repositories?.[0].owner.login}</Heading>
