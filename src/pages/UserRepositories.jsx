@@ -61,7 +61,7 @@ export default function UserRepositories () {
       {(!isLoading && !state.error) && (
         <>
           <Heading type='title'>Repos @{user}</Heading>
-          {!state.repositories.lenght && <p>O usuário não possui repositórios :(</p>}
+          {state.repositories?.length === 0 && <p>O usuário não possui repositórios :(</p>}
           <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder} />
           <RepositoryList repositories={state.repositories} />
         </>

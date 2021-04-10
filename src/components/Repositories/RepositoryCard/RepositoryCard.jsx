@@ -1,6 +1,6 @@
 import { GoStar, GoRepo } from 'react-icons/go'
 
-import BaseCard from '../../BaseCard'
+import BaseCard from '../../Card/BaseCard'
 import Heading from '../../Typography/Heading'
 import Separator from '../../Separator'
 
