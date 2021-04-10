@@ -18,15 +18,28 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "prepare": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "standard",
-    "lint:fix": "standard --fix" 
+    "lint:fix": "standard --fix"
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "standard --fix", "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -41,6 +54,8 @@
     ]
   },
   "devDependencies": {
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
     "nock": "^13.0.11",
     "react-select-event": "^5.3.0",
     "standard": "^16.0.3"
