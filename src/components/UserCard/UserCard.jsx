@@ -13,8 +13,8 @@ const UserCard = ({
   location
 }) => {
   return (
-    <BaseCard className='userCard'>
-      <img className='userCard__avatar' src={avatarUrl} alt={`Foto de perfil de ${name}`} />
+    <BaseCard className='usercard'>
+      <img className='usercard__avatar' src={avatarUrl} alt={`Foto de perfil de ${name}`} />
       <strong>{name}</strong>
       <p>@{login}</p>
       {location && (<p>{location}</p>)}

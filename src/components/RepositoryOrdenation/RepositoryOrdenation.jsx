@@ -34,12 +34,12 @@ const RepositoryOrdenation = ({ repositories, dispatcher }) => {
   }
 
   return (
-    <select className='repositoryOrdenation' name='ordenation' onChange={e => handleOrdenation(e)}>
-      <option className='repositoryOrdenation__option' value=''>--Ordenar os repositórios--</option>
-      <option className='repositoryOrdenation__option' value='stargazers_count_asc'>Estrelas Crescente</option>
-      <option className='repositoryOrdenation__option' value='stargazers_count_desc'>Estrelas Decresente</option>
-      <option className='repositoryOrdenation__option' value='name_asc'>Nome Crescente</option>
-      <option className='repositoryOrdenation__option' value='name_desc'>Nome Decresente</option>
+    <select className='repositoryordenation' name='ordenation' onChange={e => handleOrdenation(e)}>
+      <option className='repositoryordenation__option' value=''>--Ordenar os repositórios--</option>
+      <option className='repositoryordenation__option' value='stargazers_count_asc'>Estrelas Crescente</option>
+      <option className='repositoryordenation__option' value='stargazers_count_desc'>Estrelas Decresente</option>
+      <option className='repositoryordenation__option' value='name_asc'>Nome Crescente</option>
+      <option className='repositoryordenation__option' value='name_desc'>Nome Decresente</option>
     </select>
   )
 }

@@ -2,7 +2,7 @@ import './BaseCard.sass'
 
 const BaseCard = ({ children }) => {
   return (
-    <div className='baseCard'>
+    <div className='basecard'>
       {children}
     </div>
   )
