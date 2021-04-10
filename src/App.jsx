@@ -16,7 +16,7 @@ export default function App () {
       <div className='app'>
         <header className='app__header'>
           <Link to='/'>
-            <GoMarkGithub className='app__header__icon' />
+            <GoMarkGithub className='app__icon' />
           </Link>
           <Search />
         </header>
