@@ -14,7 +14,7 @@ describe('RepositoryCard', () => {
         license='MIT License'
       />
     )
-    expect(container.querySelector('.baseCard')).toBeInTheDocument()
+    expect(container.querySelector('.basecard')).toBeInTheDocument()
     expect(getByText(/algorithms/i)).toBeInTheDocument()
     expect(getByText(/4/i)).toBeInTheDocument()
     expect(getByText(/MIT License/i)).toBeInTheDocument()

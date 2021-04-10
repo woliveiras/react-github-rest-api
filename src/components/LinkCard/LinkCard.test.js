@@ -10,6 +10,6 @@ describe('LinkCard', () => {
       <LinkCard>React & GitHub Rest API Test</LinkCard>
     )
     expect(getByText(/React & GitHub Rest API Test/i)).toBeInTheDocument()
-    expect(container.querySelector('.linkCard')).toBeInTheDocument()
+    expect(container.querySelector('.linkcard')).toBeInTheDocument()
   })
 })

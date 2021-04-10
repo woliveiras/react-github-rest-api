@@ -5,10 +5,11 @@ import Loader from 'react-loader-spinner'
 
 import { useAppContext } from '../context/appContext'
 
-import RepositoryCard from '../components/RepositoryCard'
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
-import RepositoryOrdenation from '../components/RepositoryOrdenation'
+import RepositoryCard from '../components/Repositories/RepositoryCard'
+import RepositoryList from '../components/Repositories/RepositoryList'
+import RepositoryOrdenation from '../components/Repositories/RepositoryOrdenation'
 
 export default function UserRepositories () {
   const { user } = useParams()
@@ -59,22 +60,10 @@ export default function UserRepositories () {
       {(!isLoading && state.error) && <Error />}
       {(!isLoading && !state.error) && (
         <>
-          <Heading type='title'>Repos @{state.repositories?.[0].owner.login}</Heading>
+          <Heading type='title'>Repos @{user}</Heading>
+          {!state.repositories.lenght && <p>O usuário não possui repositórios :(</p>}
           <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder} />
-          <ul className=''>
-            {state.repositories?.map(repo =>
-              (
-                <li key={repo.name}>
-                  <RepositoryCard
-                    name={repo.name}
-                    repoUrl={repo.html_url}
-                    starts={repo.stargazers_count}
-                    license={repo.license?.name}
-                    description={repo.description}
-                  />
-                </li>
-              ))}
-          </ul>
+          <RepositoryList repositories={state.repositories} />
         </>
       )}
     </>

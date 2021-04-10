@@ -3,6 +3,8 @@ import { orderBy } from 'lodash'
 import './RepositoryOrdenation.sass'
 
 const RepositoryOrdenation = ({ repositories, dispatcher }) => {
+  const hasRepositories = repositories?.length > 0
+
   const handleOrdenation = e => {
     const userChoice = e.target.value
     const ordenationTypes = {
@@ -34,13 +36,17 @@ const RepositoryOrdenation = ({ repositories, dispatcher }) => {
   }
 
   return (
-    <select className='repositoryordenation' name='ordenation' onChange={e => handleOrdenation(e)}>
-      <option className='repositoryordenation__option' value=''>--Ordenar os repositórios--</option>
-      <option className='repositoryordenation__option' value='stargazers_count_asc'>Estrelas Crescente</option>
-      <option className='repositoryordenation__option' value='stargazers_count_desc'>Estrelas Decresente</option>
-      <option className='repositoryordenation__option' value='name_asc'>Nome Crescente</option>
-      <option className='repositoryordenation__option' value='name_desc'>Nome Decresente</option>
-    </select>
+    <>
+      {hasRepositories && 
+        <select className='repositoryordenation' name='ordenation' onChange={e => handleOrdenation(e)}>
+          <option className='repositoryordenation__option' value=''>--Ordenar os repositórios--</option>
+          <option className='repositoryordenation__option' value='stargazers_count_asc'>Estrelas Crescente</option>
+          <option className='repositoryordenation__option' value='stargazers_count_desc'>Estrelas Decresente</option>
+          <option className='repositoryordenation__option' value='name_asc'>Nome Crescente</option>
+          <option className='repositoryordenation__option' value='name_desc'>Nome Decresente</option>
+        </select>
+    }
+    </>
   )
 }
 

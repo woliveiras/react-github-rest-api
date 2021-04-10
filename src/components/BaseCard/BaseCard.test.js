@@ -10,6 +10,6 @@ describe('BaseCard', () => {
       <BaseCard>React & GitHub Rest API Test</BaseCard>
     )
     expect(getByText(/React & GitHub Rest API Test/i)).toBeInTheDocument()
-    expect(container.querySelector('.baseCard')).toBeInTheDocument()
+    expect(container.querySelector('.basecard')).toBeInTheDocument()
   })
 })
