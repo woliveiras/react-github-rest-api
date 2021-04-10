@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
-import { useCustomUseContext } from '../context/reactGitHubApiContext'
+import { useAppContext } from '../context/appContext'
 
 import UserCard from '../components/UserCard'
 import LinkCard from '../components/LinkCard'
@@ -13,7 +13,7 @@ import Heading from '../components/Typography/Heading'
 export default function UserDetail () {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
-  const { state, dispatch } = useCustomUseContext()
+  const { state, dispatch } = useAppContext()
 
   useEffect(() => {
     const fetchUser = async user => {

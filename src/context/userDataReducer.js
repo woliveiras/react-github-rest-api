@@ -1,4 +1,4 @@
-export default function contextReducer (state, action) {
+export default function userDataReducer (state, action) {
   switch (action.type) {
     case 'SET_USER_DATA': {
       return {

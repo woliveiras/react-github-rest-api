@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
-import { useCustomUseContext } from '../context/reactGitHubApiContext'
+import { useAppContext } from '../context/appContext'
 
 import RepositoryCard from '../components/RepositoryCard'
 import Error from '../components/Error'
@@ -13,7 +13,7 @@ import RepositoryOrdenation from '../components/RepositoryOrdenation'
 export default function UserRepositories () {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
-  const { state, dispatch } = useCustomUseContext()
+  const { state, dispatch } = useAppContext()
 
   const handleRepositoriesOrder = ordenated => {
     dispatch({

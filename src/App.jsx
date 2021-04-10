@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import UserDetail from './pages/UserDetail'
 import UserRepositories from './pages/UserRepositories'
 
-import { ContextProvider } from './context/reactGitHubApiContext'
+import { ContextProvider } from './context/appContext'
 import Search from './components/Search'
 
 import './App.sass'
