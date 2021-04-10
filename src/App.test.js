@@ -8,7 +8,7 @@ test('renders react App', () => {
   const history = createMemoryHistory()
   const { container } = render(
     <Router history={history}>
-        <App />
+      <App />
     </Router>
   )
   expect(container.querySelector('.app')).toBeInTheDocument()

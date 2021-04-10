@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './reset.sass'
 import './base.sass'
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import App from './App'
 

@@ -1,5 +1,5 @@
 import './Separator.sass'
 
-const Separator = () => (<span className='separator'></span>)
+const Separator = () => (<span className='separator' />)
 
 export default Separator

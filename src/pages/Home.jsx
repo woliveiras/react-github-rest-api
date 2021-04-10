@@ -1,6 +1,6 @@
 import Heading from '../components/Typography/Heading'
 
-export default function App() {
+export default function App () {
   return (
     <section>
       <Heading

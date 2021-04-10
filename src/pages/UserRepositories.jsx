@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import Loader from "react-loader-spinner"
+import Loader from 'react-loader-spinner'
 
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
@@ -10,7 +10,7 @@ import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
 import RepositoryOrdenation from '../components/RepositoryOrdenation'
 
-export default function UserRepositories() {
+export default function UserRepositories () {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
   const { state, dispatch } = useCustomUseContext()
@@ -29,29 +29,28 @@ export default function UserRepositories() {
         .then(response => {
           setIsLoading(false)
           dispatch({
-              type: 'SET_REPOSITORIES_DATA',
-              repositories: response.data
+            type: 'SET_REPOSITORIES_DATA',
+            repositories: response.data
           })
         })
         .catch(error => {
           setIsLoading(false)
           dispatch({
-              type: 'SET_FETCH_ERROR',
-              error: error
+            type: 'SET_FETCH_ERROR',
+            error: error
           })
         })
     }
 
     fetchUser(user)
-
   }, [user, dispatch])
 
   return (
     <>
       {isLoading && (
         <Loader
-          type="TailSpin"
-          color="#5194f0"
+          type='TailSpin'
+          color='#5194f0'
           height={100}
           width={100}
           timeout={3000}
@@ -61,18 +60,20 @@ export default function UserRepositories() {
       {(!isLoading && !state.error) && (
         <>
           <Heading type='title'>Repos @{state.repositories?.[0].owner.login}</Heading>
-          <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder}/>
+          <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder} />
           <ul className=''>
-            {state.repositories?.map(repo => 
-              (<li key={repo.name}>
-                <RepositoryCard 
-                  name={repo.name}
-                  repoUrl={repo.html_url}
-                  starts={repo.stargazers_count}
-                  license={repo.license?.name}
-                  description={repo.description}
-                />
-              </li>))}
+            {state.repositories?.map(repo =>
+              (
+                <li key={repo.name}>
+                  <RepositoryCard
+                    name={repo.name}
+                    repoUrl={repo.html_url}
+                    starts={repo.stargazers_count}
+                    license={repo.license?.name}
+                    description={repo.description}
+                  />
+                </li>
+              ))}
           </ul>
         </>
       )}

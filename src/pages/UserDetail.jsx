@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
-import Loader from "react-loader-spinner"
+import Loader from 'react-loader-spinner'
 
 import { useCustomUseContext } from '../context/reactGitHubApiContext'
 
@@ -10,7 +10,7 @@ import LinkCard from '../components/LinkCard'
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
 
-export default function UserDetail() {
+export default function UserDetail () {
   const { user } = useParams()
   const [isLoading, setIsLoading] = useState(false)
   const { state, dispatch } = useCustomUseContext()
@@ -22,29 +22,28 @@ export default function UserDetail() {
         .then(response => {
           setIsLoading(false)
           dispatch({
-              type: 'SET_USER_DATA',
-              user: response.data
+            type: 'SET_USER_DATA',
+            user: response.data
           })
         })
         .catch(error => {
           setIsLoading(false)
           dispatch({
-              type: 'SET_FETCH_ERROR',
-              error: error
+            type: 'SET_FETCH_ERROR',
+            error: error
           })
         })
     }
 
     fetchUser(user)
-
   }, [user, dispatch])
 
   return (
     <>
       {isLoading && (
         <Loader
-          type="TailSpin"
-          color="#5194f0"
+          type='TailSpin'
+          color='#5194f0'
           height={100}
           width={100}
           timeout={3000}
@@ -57,7 +56,7 @@ export default function UserDetail() {
             type='subtitle'
             text='Detalhes de usuário'
           />
-          <UserCard 
+          <UserCard
             avatarUrl={state.user?.avatar_url}
             login={state.user?.login}
             name={state.user?.name}
