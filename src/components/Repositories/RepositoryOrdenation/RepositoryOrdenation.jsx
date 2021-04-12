@@ -37,18 +37,18 @@ const RepositoryOrdenation = ({ repositories = [], dispatcher = null }) => {
 
   return (
     <>
-      {hasRepositories && 
-        <select 
-          className='repositoryordenation' 
-          name='ordenation' 
-          onChange={e => handleOrdenation(e.target.value, ordenationOptions, dispatcher)}>
+      {hasRepositories &&
+        <select
+          className='repositoryordenation'
+          name='ordenation'
+          onChange={e => handleOrdenation(e.target.value, ordenationOptions, dispatcher)}
+        >
           <option className='repositoryordenation__option' value='name_asc'>--Ordenar os repositórios--</option>
           <option className='repositoryordenation__option' value='stargazers_count_asc'>Estrelas Crescente</option>
           <option className='repositoryordenation__option' value='stargazers_count_desc'>Estrelas Decresente</option>
           <option className='repositoryordenation__option' value='name_asc'>Nome Crescente</option>
           <option className='repositoryordenation__option' value='name_desc'>Nome Decresente</option>
-        </select>
-      }
+        </select>}
     </>
   )
 }

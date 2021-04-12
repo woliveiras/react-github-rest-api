@@ -7,7 +7,6 @@ import { useAppContext } from '../context/appContext'
 
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
-import RepositoryCard from '../components/Repositories/RepositoryCard'
 import RepositoryList from '../components/Repositories/RepositoryList'
 import RepositoryOrdenation from '../components/Repositories/RepositoryOrdenation'
 
