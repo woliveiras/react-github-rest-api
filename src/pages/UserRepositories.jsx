@@ -16,12 +16,11 @@ export default function UserRepositories () {
   const [isLoading, setIsLoading] = useState(false)
   const { state, dispatch } = useAppContext()
 
-  const handleRepositoriesOrder = ordenated => {
+  const dispatchOrdenation = ordenatedRepositories =>
     dispatch({
       type: 'SET_REPOSITORIES_DATA',
-      repositories: ordenated
+      repositories: ordenatedRepositories
     })
-  }
 
   useEffect(() => {
     const fetchUser = async user => {
@@ -62,7 +61,7 @@ export default function UserRepositories () {
         <>
           <Heading type='title'>Repos @{user}</Heading>
           {state.repositories?.length === 0 && <p>O usuário não possui repositórios :(</p>}
-          <RepositoryOrdenation repositories={state.repositories} dispatcher={handleRepositoriesOrder} />
+          <RepositoryOrdenation repositories={state.repositories} dispatcher={dispatchOrdenation} />
           <RepositoryList repositories={state.repositories} />
         </>
       )}
