@@ -10,24 +10,22 @@ const RepositoryCard = ({
   starts = null,
   description = null,
   license = null
-}) => {
-  return (
-    <BaseCard>
-      <a href={repoUrl} target='_blank' rel='noreferrer'>
-        <article>
-          <Heading type='intertitle'><GoRepo /> {name}</Heading>
-          <p><GoStar /> {starts}</p>
-          {description && (<p>{description}</p>)}
-          {license && (
-            <>
-              <Separator />
-              <p>Licença: {license}</p>
-            </>
-          )}
-        </article>
-      </a>
-    </BaseCard>
-  )
-}
+}) => (
+  <BaseCard>
+    <a href={repoUrl} target='_blank' rel='noreferrer'>
+      <article>
+        <Heading type='intertitle'><GoRepo /> {name}</Heading>
+        <p><GoStar /> {starts}</p>
+        {description && (<p>{description}</p>)}
+        {license && (
+          <>
+            <Separator />
+            <p>Licença: {license}</p>
+          </>
+        )}
+      </article>
+    </a>
+  </BaseCard>
+)
 
 export default RepositoryCard
