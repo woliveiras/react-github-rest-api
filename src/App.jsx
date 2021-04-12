@@ -1,9 +1,7 @@
-import { Route, Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { GoMarkGithub } from 'react-icons/go'
 
-import Home from './pages/Home'
-import UserDetail from './pages/UserDetail'
-import UserRepositories from './pages/UserRepositories'
+import Routes from './Routes'
 
 import { ContextProvider } from './context/appContext'
 import Search from './components/Search'
@@ -21,11 +19,7 @@ export default function App () {
           <Search />
         </header>
         <main className='app__content'>
-          <Switch>
-            <Route exact path='/'><Home /></Route>
-            <Route exact path='/:user'><UserDetail /></Route>
-            <Route path='/:user/repositories'><UserRepositories /></Route>
-          </Switch>
+          <Routes />
         </main>
       </div>
     </ContextProvider>
