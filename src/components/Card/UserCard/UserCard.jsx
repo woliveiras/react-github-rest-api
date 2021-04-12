@@ -4,13 +4,13 @@ import Separator from '../../Separator'
 import './UserCard.sass'
 
 const UserCard = ({
-  avatarUrl,
-  login,
-  name,
-  bio,
-  followers,
-  following,
-  location
+  avatarUrl = null,
+  login = null,
+  name = null,
+  bio = null,
+  followers = null,
+  following = null,
+  location = null
 }) => {
   return (
     <BaseCard className='usercard'>

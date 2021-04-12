@@ -5,11 +5,11 @@ import Heading from '../../Typography/Heading'
 import Separator from '../../Separator'
 
 const RepositoryCard = ({
-  name,
-  repoUrl,
-  starts,
-  description,
-  license
+  name = null,
+  repoUrl = null,
+  starts = null,
+  description = null,
+  license = null
 }) => {
   return (
     <BaseCard>
