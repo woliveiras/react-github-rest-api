@@ -1,10 +1,13 @@
+@import '../../../sass/base/_variables'
+@import '../../../sass/mixins/_flex-column'
+@import '../../../sass/mixins/_default-padding'
+@import '../../../sass/mixins/_default-margin'
+
 .basecard
-  background: #fff
+  @include flex-column
+  @include default-padding
+  @include default-margin
+  background: $ligth-primary
   box-shadow: 0 8px 12px -13px rgba(0, 0, 0, 0.6)
-  display: flex
-  flex-direction: column
-  margin-bottom: 0.5rem
-  margin-top: 0.5rem
   max-width: 380px
-  padding: 1rem
   width: inherit

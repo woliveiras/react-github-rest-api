@@ -1,3 +1,5 @@
+@import '../../sass/mixins/_align-center'
+
 .search
   margin-left: 1rem
   padding-right: 0.5rem
@@ -20,16 +22,4 @@
     width: 100%
     
   &__go
-    align-items: center
-    background: transparent
-    border: hidden
-    cursor: pointer
-    display: flex
-    height: 30px
-    justify-content: center
-    position: absolute
-    right: 0
-    top: 0
-    top: 2px
-    transform: translateX(2px)
-    z-index: 2
+    @include align-center
