@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
 import { useAppContext } from '../context/appContext'
+import fetchRepositories from '../services/fetchRepositories'
 
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
@@ -22,26 +22,22 @@ export default function UserRepositories () {
     })
 
   useEffect(() => {
-    const fetchUser = async user => {
-      setIsLoading(true)
-      await axios.get(`https://api.github.com/users/${user}/repos`)
-        .then(response => {
-          setIsLoading(false)
-          dispatch({
-            type: 'SET_REPOSITORIES_DATA',
-            repositories: response.data
-          })
+    setIsLoading(true)
+    fetchRepositories(user)
+      .then(repositories => {
+        setIsLoading(false)
+        dispatch({
+          type: 'SET_REPOSITORIES_DATA',
+          repositories: repositories
         })
-        .catch(error => {
-          setIsLoading(false)
-          dispatch({
-            type: 'SET_FETCH_ERROR',
-            error: error
-          })
+      })
+      .catch(error => {
+        setIsLoading(false)
+        dispatch({
+          type: 'SET_FETCH_ERROR',
+          error: error
         })
-    }
-
-    fetchUser(user)
+      })
   }, [user, dispatch])
 
   return (
