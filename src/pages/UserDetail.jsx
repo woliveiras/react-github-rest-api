@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
 import { useAppContext } from '../context/appContext'
+import fetchUser from '../services/fetchUser'
 
 import UserCard from '../components/Card/UserCard'
 import LinkCard from '../components/Card/LinkCard'
@@ -16,26 +16,22 @@ export default function UserDetail () {
   const { state, dispatch } = useAppContext()
 
   useEffect(() => {
-    const fetchUser = async user => {
-      setIsLoading(true)
-      await axios.get(`https://api.github.com/users/${user}`)
-        .then(response => {
-          setIsLoading(false)
-          dispatch({
-            type: 'SET_USER_DATA',
-            user: response.data
-          })
-        })
-        .catch(error => {
-          setIsLoading(false)
-          dispatch({
-            type: 'SET_FETCH_ERROR',
-            error: error
-          })
-        })
-    }
-
+    setIsLoading(true)
     fetchUser(user)
+      .then(userData => {
+        setIsLoading(false)
+        dispatch({
+          type: 'SET_USER_DATA',
+          user: userData
+        })
+      })
+      .catch(error => {
+        setIsLoading(false)
+        dispatch({
+          type: 'SET_FETCH_ERROR',
+          error: error
+        })
+      })
   }, [user, dispatch])
 
   return (
