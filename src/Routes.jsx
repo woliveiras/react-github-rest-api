@@ -6,11 +6,9 @@ import UserRepositories from './pages/UserRepositories'
 
 const Routes = () => (
   <Switch>
-    <Switch>
-      <Route exact path='/'><Home /></Route>
-      <Route exact path='/:user'><UserDetail /></Route>
-      <Route path='/:user/repositories'><UserRepositories /></Route>
-    </Switch>
+    <Route exact path='/'><Home /></Route>
+    <Route exact path='/:user'><UserDetail /></Route>
+    <Route path='/:user/repositories'><UserRepositories /></Route>
   </Switch>
 )
 
