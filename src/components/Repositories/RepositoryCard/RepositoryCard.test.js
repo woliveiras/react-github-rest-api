@@ -18,6 +18,7 @@ describe('RepositoryCard', () => {
     expect(getByText(/algorithms/i)).toBeInTheDocument()
     expect(getByText(/4/i)).toBeInTheDocument()
     expect(getByText(/MIT License/i)).toBeInTheDocument()
-    expect(container.querySelector('a')).toHaveAttribute('href', 'https://github.com/woliveiras/algorithms')
+    expect(container.querySelector('a'))
+      .toHaveAttribute('href', 'https://github.com/woliveiras/algorithms')
   })
 })

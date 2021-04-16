@@ -3,7 +3,7 @@ import { GoMarkGithub } from 'react-icons/go'
 
 import Routes from './Routes'
 
-import { ContextProvider } from './context/appContext'
+import { ContextProvider } from './app/context/appContext'
 import Search from './components/Search'
 
 import './App.sass'

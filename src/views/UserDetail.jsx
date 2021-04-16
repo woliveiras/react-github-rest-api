@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
-import { useAppContext } from '../context/appContext'
-import fetchUser from '../services/fetchUser'
+import { useAppContext } from '../app/context/appContext'
+import fetchUser from '../app/services/fetchUser'
 
 import UserCard from '../components/Card/UserCard'
 import LinkCard from '../components/Card/LinkCard'
@@ -62,7 +62,9 @@ export default function UserDetail () {
             location={state.user?.location}
           />
           <LinkCard>
-            <Link to={`/${state.user?.login}/repositories`}>Conferir os repositórios</Link>
+            <Link to={`/${state.user?.login}/repositories`}>
+              Conferir os repositórios
+            </Link>
           </LinkCard>
         </>
       )}

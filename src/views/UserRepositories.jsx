@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 
-import { useAppContext } from '../context/appContext'
-import fetchRepositories from '../services/fetchRepositories'
+import { useAppContext } from '../app/context/appContext'
+import fetchRepositories from '../app/services/fetchRepositories'
 
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'

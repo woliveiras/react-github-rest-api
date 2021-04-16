@@ -1,8 +1,8 @@
 import { Route, Switch } from 'react-router-dom'
 
-import Home from './pages/Home'
-import UserDetail from './pages/UserDetail'
-import UserRepositories from './pages/UserRepositories'
+import Home from './views/Home'
+import UserDetail from './views/UserDetail'
+import UserRepositories from './views/UserRepositories'
 
 const Routes = () => (
   <Switch>

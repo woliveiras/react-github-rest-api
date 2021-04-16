@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { GITHUB_URI } from '../shared/config'
+import { GITHUB_URI } from '../../shared/config'
 
 const fetchUser = async user => {
   try {
