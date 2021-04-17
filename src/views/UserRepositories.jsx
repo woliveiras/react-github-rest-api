@@ -7,8 +7,7 @@ import fetchRepositories from '../app/services/fetchRepositories'
 
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
-import RepositoryList from '../components/Repositories/RepositoryList'
-import RepositoryOrdenation from '../components/Repositories/RepositoryOrdenation'
+import { RepositoryList, RepositoryOrdenation } from '../components/Repositories'
 
 export default function UserRepositories () {
   const { user } = useParams()

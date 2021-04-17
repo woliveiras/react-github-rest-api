@@ -1,5 +1,5 @@
-import BaseCard from '../BaseCard'
-import Separator from '../../Separator'
+import { BaseCard } from '../Cards'
+import Separator from '../Separator'
 
 import './UserCard.sass'
 

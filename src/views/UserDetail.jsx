@@ -5,8 +5,8 @@ import Loader from 'react-loader-spinner'
 import { useAppContext } from '../app/context/appContext'
 import fetchUser from '../app/services/fetchUser'
 
-import UserCard from '../components/Card/UserCard'
-import LinkCard from '../components/Card/LinkCard'
+import { LinkCard } from '../components/Cards'
+import UserCard from '../components/UserCard'
 import Error from '../components/Error'
 import Heading from '../components/Typography/Heading'
 
